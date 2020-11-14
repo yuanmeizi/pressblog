@@ -292,5 +292,5 @@ X-UA-Compatible：这是个是IE8的专用标记,用来指定IE8浏览器去模�
 ## git subtree 把指定的文件夹推送到指定的分支
 比如写vuepress文档时，通常文档的位置在项目的docs/.vuepress/dist目录，而且我们的文档部署的地方是Github中的gh-pages分支，所以可以执行下面命令把文档推到gh-pages分支。
 ```
-git subtree push --prefix docs/.vuepress/dist origin gh-pages
+git subtree push --prefix=docs/.vuepress/dist origin gh-pages
 ```
