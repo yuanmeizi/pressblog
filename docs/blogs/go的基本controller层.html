@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>beego框架里一些常用的东西封装 | 远妹子的博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="这是一个vue-press的博客">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.58e30792.css" as="style"><link rel="preload" href="/assets/js/app.a3d621f8.js" as="script"><link rel="preload" href="/assets/js/3.165a6112.js" as="script"><link rel="preload" href="/assets/js/1.9ca2528e.js" as="script"><link rel="preload" href="/assets/js/12.83f1b8a4.js" as="script"><link rel="prefetch" href="/assets/js/10.ae387bdd.js"><link rel="prefetch" href="/assets/js/11.39fa6bbe.js"><link rel="prefetch" href="/assets/js/13.4af4dc66.js"><link rel="prefetch" href="/assets/js/14.4bf26bd2.js"><link rel="prefetch" href="/assets/js/15.f8020394.js"><link rel="prefetch" href="/assets/js/16.019f5e0c.js"><link rel="prefetch" href="/assets/js/17.eefc24f5.js"><link rel="prefetch" href="/assets/js/18.7b943f02.js"><link rel="prefetch" href="/assets/js/19.2c569f9f.js"><link rel="prefetch" href="/assets/js/20.1aad41bd.js"><link rel="prefetch" href="/assets/js/21.f99909c3.js"><link rel="prefetch" href="/assets/js/22.40734cc3.js"><link rel="prefetch" href="/assets/js/23.c2a63d34.js"><link rel="prefetch" href="/assets/js/24.5d5fc8a6.js"><link rel="prefetch" href="/assets/js/4.5de428a4.js"><link rel="prefetch" href="/assets/js/5.aaf16c96.js"><link rel="prefetch" href="/assets/js/6.c072e86c.js"><link rel="prefetch" href="/assets/js/7.dca0726b.js"><link rel="prefetch" href="/assets/js/8.36c3f6bb.js"><link rel="prefetch" href="/assets/js/9.d07898f1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58e30792.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>welecome to my blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>yuanmeizi</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="远妹子的博客" class="logo"> <span class="site-name">远妹子的博客</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yuanmeizi" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.yuanmeizi.tk" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-blog"></i>
+  Hexo
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      选择语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/go的基本controller层.html" class="nav-link"><i class="iconfont undefined"></i>
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link"><i class="iconfont undefined"></i>
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    yuanmeizi
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>13</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>20</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/yuanmeizi" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.yuanmeizi.tk" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-blog"></i>
+  Hexo
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      选择语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/go的基本controller层.html" class="nav-link"><i class="iconfont undefined"></i>
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/en/" class="nav-link"><i class="iconfont undefined"></i>
+  English
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>beego框架里一些常用的东西封装</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>yuanmeizi</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-2d5f533b><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">beego框架里一些常用的东西封装</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>yuanmeizi</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2019-07-17 16:30:00</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>golang</span><span class="tag-item" data-v-3b7f5bdf>beego</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="beego框架里controller层的一些常用封装"><a href="#beego框架里controller层的一些常用封装" class="header-anchor">#</a> beego框架里controller层的一些常用封装</h1> <p>(其实没软用)</p> <h2 id="beego框架里controller层的一些常用封装-2"><a href="#beego框架里controller层的一些常用封装-2" class="header-anchor">#</a> beego框架里controller层的一些常用封装</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>package controllers
+
+import (
+    &quot;../models&quot;
+    &quot;crypto/md5&quot;
+    &quot;encoding/json&quot;
+    &quot;fmt&quot;
+    &quot;github.com/astaxie/beego&quot;
+    &quot;io/ioutil&quot;
+    &quot;log&quot;
+    &quot;net&quot;
+    &quot;os&quot;
+    &quot;path/filepath&quot;
+    &quot;strconv&quot;
+    &quot;strings&quot;
+    &quot;time&quot;
+)
+
+type wycontroller struct {
+    beego.Controller
+}
+
+//获得返回结果的JSON字符串
+type st_json_normal_data struct {
+    Status int         `json:&quot;status&quot;`
+    Msg    string      `json:&quot;msg&quot;`
+    Data   interface{} `json:&quot;datalist&quot;`
+}
+
+var (
+    ImgExt = []string{&quot;jpg&quot;, &quot;gif&quot;, &quot;png&quot;, &quot;jpeg&quot;, &quot;bmp&quot;, &quot;&quot;}
+)
+
+//获得当前时间
+func (this *ywcontroller) GetDateTime() string {
+    return time.Now().Format(&quot;2006-01-02 15:04:05&quot;)
+}
+
+// 转换时间字符串格式
+// 时间格式：2006-01-02 15:04:05
+// timestr: 需要转换的日期
+// oldFormat： 转换前的格式
+// newFormat： 转换后的格式
+func (this *ywcontroller) FormateDateStr(timestr string, oldFormat string, newFormat string) (string, error) {
+    formatTime, err := time.Parse(oldFormat, timestr)
+    return formatTime.Format(newFormat), err
+}
+
+//获得传入的参数，转换为int
+func (this *ywcontroller) GetParamAsInt(key string) int {
+    num, err := strconv.Atoi(this.GetString(key))
+    if err != nil {
+        return 0
+    }
+    return num
+}
+
+//获得当前传入的string参数
+func (this *ywcontroller) GetParamAsString(key string) string {
+    return this.GetString(key)
+}
+
+//获得当前传入的参数，防止sql注入，替换一些字符
+func (this *ywcontroller) GetParamAsSqlString(key string) string {
+    val := strings.Replace(this.GetString(key), &quot;'&quot;, &quot;''&quot;, -1)
+    return val
+}
+
+/*
+返回json字符串
+输入 status 返回状态, msg 返回信息, data 数据
+输出 转换成json字符串 {Status: status, Msg: msg, Data: &quot;&quot;}
+*/
+func (this *ywcontroller) jsonString(status int, msg string, data interface{}) string {
+    s := &amp;st_json_normal_data{Status: status, Msg: msg}
+    if data == nil {
+        s.Data = &quot;&quot;
+    } else {
+        s.Data = data
+    }
+    bt, _ := json.Marshal(s)
+    return string(bt)
+}
+
+/*
+输出一个对象
+*/
+func (this *ywcontroller) ReturnJsonString(status int, msg string, data interface{}) {
+    this.Ctx.WriteString(this.jsonString(status, msg, data))
+}
+
+//判断是不是数
+func (this *ywcontroller) Is_Number(num string) bool {
+    if _, err := strconv.Atoi(num); err != nil {
+        return false
+    }
+    return true
+}
+
+//转换为数字
+func (this *ywcontroller) toInt(val interface{}) int {
+    num, err := strconv.Atoi(fmt.Sprint(val))
+    if err != nil {
+        return 0
+    }
+    return num
+}
+
+//获取系统路径
+func (this *ywcontroller) GetExePath() string {
+    exePath := filepath.Dir(os.Args[0])
+    if !filepath.IsAbs(exePath) {
+        exePath, _ = filepath.Abs(exePath)
+    }
+    return exePath
+}
+
+/*
+输出一个对象
+*/
+func (this *ywcontroller) ReturnString(args ...interface{}) {
+    //任意数据类型转成string
+    this.Ctx.WriteString(fmt.Sprint(args...))
+}
+
+func (this *ywcontroller) SetUserSession(data map[string]string) {
+    for k, v := range data {
+        this.SetSession(k, v)
+    }
+}
+
+//从session中获取某一个信息
+func (this *ywcontroller) GetUserSession(key string) (string, bool) {
+    data, ok := this.Ctx.Input.Session(key).(string)
+    if !ok {
+        return &quot;&quot;, false
+    }
+    return data, true
+}
+
+//删除所有session
+func (this *ywcontroller) DelUserSession() {
+    this.DelSession(&quot;id&quot;)
+    this.DelSession(&quot;shopid&quot;)
+    this.DelSession(&quot;name&quot;)
+    // 把要删的session全放在这里删掉
+
+}
+
+//MD5值
+func (this *ywcontroller) md5Value(s string) string {
+    h := md5.New()
+    h.Write([]byte(s))
+    return fmt.Sprintf(&quot;%x&quot;, h.Sum(nil))
+}
+
+//sws的变种MD5
+func (this *ywcontroller) SWSMD5(str string) string {
+    str = this.md5Value(str)
+    if len(str) &gt; 8 {
+        str = str[:3] + &quot;a&quot; + str[3:]
+        str = str[:5] + &quot;z&quot; + str[5:]
+    }
+    return str
+}
+
+//判断是不是图片后缀,是返回false,不是返回true
+func (this *ywcontroller) IsImgExt(ext string) bool {
+
+    for _, oneimg := range ImgExt {
+        if strings.ToLower(ext) == oneimg {
+            return false
+        }
+    }
+    return true
+}
+
+//上传一张照片,返回照片路径
+func (this *ywcontroller) UploadOneImg() {
+    files := this.GetParamAsSqlString(&quot;file&quot;)
+    file, fileheader, err := this.GetFile(files)
+    if err != nil {
+        this.ReturnString(this.jsonString(0, err.Error(), &quot;&quot;))
+        return
+    }
+    defer func() {
+        if file != nil {
+            file.Close()
+        }
+    }()
+    if fileheader.Size &gt; 2000*1024 {
+        this.ReturnJsonString(0, &quot;图片大小不得超过2mb&quot;, &quot;&quot;)
+        return
+    }
+    filename := filepath.Base(fileheader.Filename)
+    index := strings.LastIndex(filename, &quot;.&quot;)
+    ext := filename[index+1:]
+    if this.IsImgExt(ext) {
+        this.ReturnString(this.jsonString(0, &quot;仅可上传jpg、gif、png文件&quot;, &quot;&quot;))
+        return
+    }
+    //把文件保存到临时目录
+    b, err := ioutil.ReadAll(file)
+    if err != nil {
+        log.Println(err)
+        this.ReturnString(this.jsonString(0, &quot;上传文件失败&quot;, &quot;&quot;))
+        return
+    }
+    filepath := &quot;./imgfile/&quot; + fmt.Sprintf(&quot;%d.%s&quot;, time.Now().UnixNano(), ext)
+    ioutil.WriteFile(filepath, b, 0x644)
+    this.ReturnString(this.jsonString(1, &quot;导入成功&quot;, strings.TrimLeft(filepath, &quot;.&quot;)))
+}
+
+//判断文件夹是否存在
+func isDirExists(path string) bool {
+    fi, err := os.Stat(path)
+    if err != nil {
+        return os.IsExist(err)
+    }
+    return fi.IsDir()
+}
+
+//创建文件夹
+func CreatePath(path string) {
+    if isDirExists(path) {
+        return
+    }
+    err := os.Mkdir(path, 0x644)
+    if err != nil {
+        log.Println(err)
+    }
+}
+
+//判断是不是移动端访问 移动端访问返回true 非移动端访问返回false
+func (this *ywcontroller) ismobile() bool {
+    keywords := []string{&quot;Android&quot;, &quot;iPhone&quot;, &quot;iPod&quot;, &quot;iPad&quot;, &quot;Windows Phone&quot;, &quot;MQQBrowser&quot;}
+    for i := 0; i &lt; len(keywords); i++ {
+        if strings.Contains(this.Ctx.Request.UserAgent(), keywords[i]) {
+            return true
+        }
+    }
+    return false
+}
+
+/*
+获取远程用户IP地址
+输入 无
+输出 IP地址
+*/
+func (this *ywcontroller) GetRemoteAddr() (string, string) {
+    remote_addr := this.Ctx.Request.RemoteAddr
+    if npos := strings.LastIndex(remote_addr, &quot;:&quot;); npos != -1 {
+        return remote_addr[:npos], remote_addr[npos+1:]
+    }
+    return remote_addr, &quot;0&quot;
+}
+
+//判断IP是不是IPV4的IP地址
+func (this *ywcontroller) IsIPV4(ip string) bool {
+    return net.ParseIP(ip) != nil &amp;&amp; net.ParseIP(ip).DefaultMask() != nil
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br></div></div><h2 id="上面的controller封装好之后以此为基础-建立新的controller层"><a href="#上面的controller封装好之后以此为基础-建立新的controller层" class="header-anchor">#</a> 上面的controller封装好之后以此为基础,建立新的controller层</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>package controllers
+
+import (
+    &quot;fmt&quot;
+    &quot;log&quot;
+    &quot;time&quot;
+)
+
+type ShopController struct {
+    ywcontroller
+}
+
+
+func (this *ShopController) UpdateShopInfo() {
+    //根据名称接收数据转为int
+    //shopid := this.GetParamAsInt(&quot;shopid&quot;)
+
+    //根据名称接收数据类型为string,这里有防止sql注入,下面的没有
+    shopid := this.GetParamAsSqlString(&quot;shopid&quot;)
+
+    //根据名称接收数据类型为string,没有防止sql注入,上面的有
+    shopid := this.GetParamAsString(&quot;shopid&quot;)
+
+    //获取session里的信息，比如登录
+    shopid, ok := this.GetUserSession(&quot;shopid&quot;)
+    if !ok{//做一些事,比如返回首页}
+
+    //删除session
+    //this.DelUserSession()
+
+    //设置session
+    //this.SetUserSession(map[string]string{&quot;shopid&quot;: &quot;1&quot;,&quot;id&quot;:&quot;1&quot;,&quot;tel&quot;:&quot;123&quot;})
+
+    //返回页面(可携带数据,借助模版语句起到修改页面的作用)
+    this.Data[&quot;height&quot;] = &quot;100&quot;
+    this.TplName = &quot;shopauditingsinfo.html&quot;
+
+    //返回字符串(这里是返回了分页查询结果的字符串)
+    data, err := models.Querylist(&quot;select * from shopauditings&quot;, pageindex, pagesize)
+    if err != nil {
+        log.Println(err)
+        this.ReturnJsonString(0, &quot;获取店铺信息列表失败&quot;, &quot;&quot;)
+        return
+    }
+    bt, _ := json.Marshal(data)
+    this.ReturnString(string(bt))
+
+    //返回json字符串(状态值、消息字符串,数据),数据是interface{}
+    //this.ReturnJsonString(0, &quot;获取店铺信息列表失败&quot;, &quot;&quot;)
+
+}
+
+上面用this.Data[&quot;height&quot;] = &quot;100&quot;携带到页面的数据,可以用模版语句利用
+
+js里面
+if(&quot;{{.height}}&quot; != &quot;&quot;){
+    //执行一些代码
+}
+
+页面里
+&lt;input type=&quot;text&quot; style=&quot;display:none&quot; value=&quot;{{.height}}&quot; &gt;
+
+页面或者js里进行比较(这里ne是不相等,eq是相等,之前有过一次用eq没效果,换成isEqual就行了)
+{{if ne .height &quot;1&quot;}}
+一些代码
+{{else}}
+一些代码
+{{end}}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br></div></div><h2 id="beego框架里model层的连接数据库和一些查询方法封装"><a href="#beego框架里model层的连接数据库和一些查询方法封装" class="header-anchor">#</a> beego框架里model层的连接数据库和一些查询方法封装</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>package models
+
+import (
+    &quot;database/sql&quot;
+    &quot;fmt&quot;
+    // 下面这个连接mysql的时候用
+    _ &quot;github.com/go-sql-driver/mysql&quot;
+    //下面这个连接oracle的时候用
+    //_ &quot;github.com/jzaikovs/ora&quot;
+    &quot;io/ioutil&quot;
+    &quot;log&quot;
+    &quot;os&quot;
+    &quot;path/filepath&quot;
+    &quot;strconv&quot;
+    &quot;strings&quot;
+    &quot;time&quot;
+)
+
+var (
+    dbconn *sql.DB = nil
+)
+
+// 返回数据库可以直接查询
+func GetConn() *sql.DB {
+    return dbconn
+}
+
+//返回事务
+func GetTx() (*sql.Tx, error) {
+    return dbconn.Begin()
+}
+
+//打开数据库(顺便建表、初始化数据或者加入存储过程等)
+//在main.go里面执行下面语句以执行
+//err := models.Init()
+//  if err != nil {
+//      log.Panic(err.Error())
+//  }
+//  err = models.DBInit()
+//  if err != nil {
+//      log.Panic(err.Error())
+//  }
+func DBInit() error {
+    // 这个是链接mysql
+    //sql.Open(mysql,root:root@tcp(192.168.15.51:3306)/ecommerce)
+    sqldb, err := sql.Open(GetConfig().DBType, GetConfig().DBSour)
+    if err != nil {
+        return fmt.Errorf(&quot;打开数据库失败：%s&quot;, err.Error())
+    }
+    // 这个是链接oracle (用户名/密码@//ip:端口/数据库名)
+    // sqldb2, err := sql.Open(&quot;ora&quot;, &quot;system/oracle@//172.16.18.96:1522/wlsi&quot;)
+    // if err != nil {
+    //  return fmt.Errorf(&quot;打开数据库失败：%s&quot;, err.Error())
+    // }
+    Dbconn2 = sqldb2
+    dbconn = sqldb
+    CreateTable()
+    initData()
+    return nil
+}
+
+//建表(在相应文件里放入文件,里面写对应的sql的语句,程序启动时候自动执行，可以建表或者自动增加存储过程)
+func CreateTable() {
+    dir := []string{&quot;./table/table&quot;, &quot;./table/drop&quot;, &quot;./table/create&quot;}
+    for _, one := range dir {
+        filepath.Walk(one, func(path string, fs os.FileInfo, err error) error {
+            if !fs.IsDir() {
+                b, err := ioutil.ReadFile(path)
+                if err != nil {
+                    log.Panic(err.Error())
+                }
+                _, err = dbconn.Exec(string(b))
+                if err != nil {
+                    log.Panic(err.Error())
+                }
+            }
+            return nil
+        })
+    }
+}
+
+//初始化数据
+func initData() {
+    NotFindDoExec(&quot;select count(*) as num from config where `key`='password'&quot;,
+        &quot;insert into config(`key`,`value`) values('password','123456')&quot;)
+
+    filepath.Walk(&quot;./datainit&quot;, func(path string, fs os.FileInfo, err error) error {
+        if !fs.IsDir() {
+            tableName := strings.Replace(fs.Name(), filepath.Ext(fs.Name()), &quot;&quot;, 1)
+            bSql, err := ioutil.ReadFile(path)
+            if err != nil {
+                log.Panic(err.Error())
+            }
+            num, err := Count(&quot;select count(*) as num from &quot; + tableName)
+            if err != nil {
+                log.Panic(err.Error())
+            }
+            if num == 0 {
+                sql := string(bSql)
+                arrsql := strings.Split(sql, &quot;;\r\n&quot;)
+                for _, v := range arrsql {
+                    err := Exec(v)
+                    if err != nil {
+                        log.Panic(err)
+                    }
+                }
+            }
+        }
+        return nil
+    })
+}
+
+//方便查询，目前返回[]map[string]string内容
+func Query(sql string) ([]map[string]string, error) {
+    rows, err := dbconn.Query(sql)
+    if err != nil {
+        log.Println(sql, err.Error())
+        return nil, err
+    }
+    return RowsToMapList(rows)
+}
+
+func Exec(sql string) error {
+    _, err := dbconn.Exec(sql)
+    if err != nil {
+        log.Println(sql, err.Error())
+    }
+    return err
+}
+
+func QueryTableList(query string, pageindex int, pagesize int) (map[string]interface{}, error) {
+    if pagesize &lt;= 0 {
+        pagesize = 10
+    }
+    if pageindex &lt;= 0 {
+        pageindex = 1
+    }
+    totalCount := 0
+
+    table_map := make(map[string]interface{})
+    table_data := make([]map[string]interface{}, 0)
+    rows, err := dbconn.Query(query)
+    if err != nil {
+        return table_map, err
+    }
+    fields, err := rows.Columns()
+    if err != nil {
+        return table_map, err
+    }
+    fields_size := len(fields)
+    //移到开始位置
+    n := time.Now()
+    for totalCount &lt; (pageindex-1)*pagesize &amp;&amp; rows.Next() {
+        totalCount++
+    }
+    log.Println(time.Now().Sub(n))
+    hxindex := (pageindex - 1) * pagesize
+    //取值
+    n = time.Now()
+    for rows.Next() {
+        addmap := make(map[string]interface{})
+        hxindex++
+        totalCount++
+        if len(table_data) &gt;= pagesize {
+            break
+        }
+        values := make([]sql.NullString, fields_size)
+        scanArgs := make([]interface{}, fields_size)
+        for i := 0; i &lt; fields_size; i++ {
+            scanArgs[i] = &amp;values[i]
+        }
+        err = rows.Scan(scanArgs...)
+        dataMap, err := rowToMap(values, fields)
+        if err != nil {
+            return table_map, err
+        }
+        dataMap[&quot;xhid&quot;] = fmt.Sprint(hxindex)
+        addmap[&quot;id&quot;] = fmt.Sprint(hxindex)
+        addmap[&quot;cell&quot;] = dataMap
+        table_data = append(table_data, addmap)
+    }
+    log.Println(time.Now().Sub(n))
+    n = time.Now()
+    for rows.Next() {
+        totalCount++
+    }
+
+    log.Println(time.Now().Sub(n))
+    totalPage := 0
+    if totalCount%pagesize == 0 {
+        totalPage = totalCount / pagesize
+    } else {
+        totalPage = totalCount/pagesize + 1
+    }
+    table_map[&quot;pageIndex&quot;] = pageindex
+    table_map[&quot;totalCount&quot;] = totalCount
+    table_map[&quot;pageSize&quot;] = pagesize
+    table_map[&quot;totalPage&quot;] = totalPage
+    table_map[&quot;data&quot;] = table_data
+    return table_map, nil
+}
+
+//查询结果集row 的[]string转成map
+func rowToMap(rows []sql.NullString, fields []string) (map[string]string, error) {
+    rstMap := make(map[string]string)
+    if len(rows) != len(fields) {
+        return rstMap, fmt.Errorf(&quot;数据库查询结果集：rows与fields的数量不相等&quot;)
+    }
+    for k, v := range rows {
+        rstMap[fields[k]] = v.String
+    }
+    return rstMap, nil
+}
+
+//数据库查询rows转换成maplist类型
+func RowsToMapList(rows *sql.Rows) ([]map[string]string, error) {
+    var maplist []map[string]string = make([]map[string]string, 0)
+    cols, err := rows.Columns()
+    if err != nil {
+        return nil, err
+    }
+    colsize := len(cols)
+    for rows.Next() {
+        values := make([]sql.NullString, colsize)
+        scanArgs := make([]interface{}, colsize)
+        for i := 0; i &lt; colsize; i++ {
+            scanArgs[i] = &amp;values[i]
+        }
+        err = rows.Scan(scanArgs...)
+        oneMap := make(map[string]string)
+        for k, v := range values {
+            oneMap[cols[k]] = v.String
+        }
+        maplist = append(maplist, oneMap)
+    }
+    return maplist, nil
+}
+
+func Find(sql string) (map[string]string, error) {
+    maplist, err := Query(sql)
+    if err != nil {
+        log.Println(&quot;error:&quot;, err.Error(), sql)
+        return nil, fmt.Errorf(&quot;请稍后&quot;)
+    }
+    if len(maplist) == 0 {
+        return nil, nil
+    }
+    return maplist[0], nil
+}
+
+// 用sql语句查数据,自己count(1)起个别名num,返回num
+//比如NotFindDoExec(&quot;select count(*) as num from config where `key`='password'&quot;,&quot;insert into config(`key`,`value`) values('password','123456')&quot;)
+func Count(sql string) (int, error) {
+    map_data, err := Find(sql)
+    if err != nil {
+        return 0, err
+    }
+    num, err := strconv.Atoi(map_data[&quot;num&quot;])
+    if err != nil {
+        return 0, err
+    }
+    return num, nil
+}
+
+// count里面查出来的num如果为0,再去执行
+func NotFindDoExec(query, exec string) {
+    num, err := Count(query)
+    if err != nil {
+        log.Panic(err.Error())
+    }
+    if num == 0 {
+        _, err = GetConn().Exec(exec)
+        if err != nil {
+            log.Panic(err.Error())
+        }
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br></div></div><h2 id="beego框架里model层的读取config-xml里的一些配置项"><a href="#beego框架里model层的读取config-xml里的一些配置项" class="header-anchor">#</a> beego框架里model层的读取config.xml里的一些配置项</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>package models
+
+import (
+    &quot;encoding/xml&quot;
+    &quot;io/ioutil&quot;
+)
+
+var (
+    config *Config = nil
+)
+
+type Config struct {
+    DBType        string `xml:&quot;dbtype&quot;`
+    DBSour        string `xml:&quot;dbsour&quot;`
+    Product       string `xml:&quot;product&quot;`
+    Lv            int    `xml:&quot;lv&quot;`
+    EmailAddr     string `xml:&quot;emailaddr&quot;`
+    Authorization string `xml:&quot;authorization&quot;`
+    NiceName      string `xml:&quot;nicename&quot;`
+}
+
+func GetConfig() *Config {
+    return config
+    // 可以在其他models里用GetConfig()这个方法获取读取结果，再从结果里拿具体的配置
+    //GetConfig().DBType
+    //GetConfig().DBSour
+}
+
+//在main.go里面执行下面语句以执行各个models层里的Init()
+//err := models.Init()
+//  if err != nil {
+//      log.Panic(err.Error())
+//  }
+//  err = models.DBInit()
+//  if err != nil {
+//      log.Panic(err.Error())
+//  }
+func Init() error {
+    b_config, err := ioutil.ReadFile(&quot;./conf/config.xml&quot;)
+    if err != nil {
+        return err
+    }
+    return xml.Unmarshal(b_config, &amp;config)
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 welecome to my blog
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:0px;opacity:0.9;z-index:99999;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.a3d621f8.js" defer></script><script src="/assets/js/3.165a6112.js" defer></script><script src="/assets/js/1.9ca2528e.js" defer></script><script src="/assets/js/12.83f1b8a4.js" defer></script>
+  </body>
+</html>

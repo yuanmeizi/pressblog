@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: 远妹子的博客
+heroText: yuanmeiziのblog
 tagline: A simple and beautiful blog
 # heroImage: /hero.png
 # heroImageStyle: {
